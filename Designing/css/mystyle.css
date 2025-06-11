@@ -1,0 +1,28 @@
+	
+	
+		/*  grouping css */
+		
+		h1,h2,h3{
+			color:red;
+			background-color:pink;
+			text-align:center;
+		}
+		
+		/*  class css */
+		.mypA{
+			color:green;
+			background-color:yellow;
+			text-align:left;
+		}
+		
+		.upper{
+			text-transform:uppercase;
+		}
+		
+		
+		/*  id css */
+		#mypB{
+			color:yellow;
+			background-color:blue;
+			text-align:right;
+		}
