@@ -24,10 +24,9 @@ Array operators
 /*
 $a=11;
 $b=20;
-$sum=$b%$a;   20%11 = 9
+$sum=$b%$a;   //20%11 = 9
 echo $sum;
 */
-
 
 //Assignment Operators / Shorthand operators  = += -= *= /=  %=   $a+=$b  $a=$a+$b;
 
@@ -118,10 +117,11 @@ $a="Raj";
 echo "Hello" . $a . "<br>";
 
 $name="Rajesh";
-$name.=" Nagar";
-$name.=" .N";
+$name.=" NAGAR";
+$name.=" N";
 echo $name;
 */
+
 
 // conditional operators / turnory 
 
@@ -138,6 +138,7 @@ else
 */
 
 // turnory operator conditional( ? : )   (cond)? yes : No
+
 
 $age=17;
 echo $ans=($age>=18)? "Man" : "Child";  // codition ? "yes":"no";   ?:
