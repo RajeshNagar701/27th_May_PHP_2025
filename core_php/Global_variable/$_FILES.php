@@ -17,16 +17,15 @@
 if(isset($_POST['submit']))
 {
 	echo $username=$_POST['username']."<br>";
-	// image upload
+	
 	if($_FILES['file1']['size']>0)
 	{
-		echo $img=$_FILES['file1']['name'];
-			 
-			 $path='img/upload/'.$img; 	
-			 $dup_img=$_FILES['file1']['tmp_name'];
-			 move_uploaded_file($dup_img,$path);
+		echo $filename=$_FILES['file1']['name']; // get file name
+		$path='img/upload/'.$filename;  // path set
+		$dup_file=$_FILES['file1']['tmp_name']; // get duplicate file
+		move_uploaded_file($dup_file,$path);
+		
 	}
-	
 }
 
 ?>

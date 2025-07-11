@@ -30,35 +30,39 @@ if(isset($_REQUEST['submit']))
 	$gujarati=$_REQUEST['gujarati'];
 	
 	$total=$hindi+$english+$gujarati;
+	echo "<p> Total marks is : " .$total."</p>";
+	
+	
 	$per=($total*100)/300;
-
+	echo "<p> Per % is : " .$per." %</p>";
+	
 	if($per>90)
 	{
-		$grade="A+ Garde";
+		echo $grade="A+ Garde";
 	}
 	elseif($per>80)
 	{
-		$grade="A Garde";
+		echo $grade="A Garde";
 	}
 	elseif($per>70)
 	{
-		$grade="B+ Garde";
+		echo $grade="B+ Garde";
 	}
 	elseif($per>60)
 	{
-		$grade="B Garde";
+		echo $grade="B Garde";
 	}
 	elseif($per>50)
 	{
-		$grade="C+ Garde";
+		echo $grade="C+ Garde";
 	}
 	elseif($per>40)
 	{
-		$grade="C Garde";
+		echo $grade="C Garde";
 	}
 	else
 	{
-		$grade="Fail";
+		echo $grade="Fail";
 	}	
 }
 
@@ -66,29 +70,3 @@ if(isset($_REQUEST['submit']))
 
 
 ?>
-<div class="container mt-3">
-  <h2>Your Result</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Hindi</th>
-		<th>English</th>
-        <th>Gujarati</th>
-		<th>Total Marks</th>
-		<th>Per %</th>
-		<th>Grade</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><?php echo $hindi;?></td>
-        <td><?php echo $english;?></td>
-		<td><?php echo $gujarati;?></td>
-		<td><?php echo $total;?></td>
-		<td><?php echo $per;?></td>
-		<td><?php echo $grade;?></td>
-      </tr>
-
-    </tbody>
-  </table>
-</div>
