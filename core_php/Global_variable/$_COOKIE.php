@@ -6,10 +6,7 @@ storing some information regarding the client computer,
 so that when the same page from the server is visited by the user, 
 necessary information can be collected from the cookie itself, 
 decreasing the latency to open the page
-
 */
-
-
 		// name    value        time for val
 setcookie('user',"My cookie",time()+15);   // CREATE  365*24*60*60
 

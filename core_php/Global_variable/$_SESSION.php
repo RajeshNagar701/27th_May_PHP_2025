@@ -10,7 +10,6 @@ form anywhere in the server
 Default time :  24 minutes (1440 seconds), 
 
 */
-
 session_start();
 $_SESSION['user']="Raj Nagar";  // CREATE
 
