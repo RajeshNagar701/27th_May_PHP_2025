@@ -20,9 +20,12 @@ network. For example, Java web service can communicate with .Net application
 
 
 1) SOAP Web Services
+
 data transfer in xml files
-SOAP stands for Simple Object Access Protocol. It is a XML-based protocol for accessing web
-services.
+
+SOAP stands for Simple Object Access Protocol. 
+It is a XML-based protocol for accessing web services.
+
 SOAP is a W3C recommendation for communication between two applications.
 SOAP is XML based protocol. It is platform independent and language independent. By using SOAP,
 you will be able to interact with other programming language application
@@ -30,10 +33,11 @@ you will be able to interact with other programming language application
 2)Restfull Web Services API Application Programming Interface
 (API)
 
-RESTful Web Services are basically REST Architecture based Web Services. In REST Architecture
-everything is a resource.
-RESTful web services are lightweight, highly scalable and maintainable and are very commonly
-used to create APIs for web-based applications.
+RESTful Web Services are basically REST Architecture based Web Services. 
+In REST Architecture everything is a resource.
+
+RESTful web services are lightweight, highly scalable and maintainable 
+and are very commonly used to create APIs for web-based applications.
 
 Json_encode & jason_decode func with example ?
 
@@ -65,7 +69,7 @@ header("Access-Control-Allow-Methods: *");
 
 
 
-$json=file_get_contents('https://jsonplaceholder.typicode.com/posts');
+$json=file_get_contents('https://fakestoreapi.com/products');
 
 $phparr=json_decode($json); // json econvert to arr
 
@@ -81,9 +85,12 @@ foreach($phparr as $data)
 
 <table border="1">
 	<tr>
-		<th>Id</th>
-		<th>Title</th>
-		<th>Body</th>
+		<th>id</th>
+		<th>title</th>
+		<th>price</th>
+		<th>description</th>
+		<th>category</th>
+		<th>image</th>
 	</tr>
 	<?php
 	foreach($phparr as $data)
@@ -92,7 +99,10 @@ foreach($phparr as $data)
 		<tr>
 			<td><?php echo $data->id?></td>
 			<td><?php echo $data->title?></td>
-			<td><?php echo $data->body?></td>
+			<td><?php echo $data->price?></td>
+			<td><?php echo $data->description?></td>
+			<td><?php echo $data->category?></td>
+			<td><img src="<?php echo $data->image?>" width="100px"></td>
 		</tr>
 	<?php
 	}
