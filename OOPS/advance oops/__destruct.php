@@ -26,4 +26,5 @@ class a
 $a = new a();
 $a->display();
 
+
 ?>

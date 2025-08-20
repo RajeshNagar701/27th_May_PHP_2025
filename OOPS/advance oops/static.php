@@ -1,20 +1,26 @@
 <?php
 /*
 
-public a    in class & out of class
-private a   only in class
+Normal variable
+
+public a     in class & out of class
+private a    only in class
 protected a  only in class & inheritance class
 
 $this->a  we can access all variables in class
 $obj->a public variable access out class by object
+
+
 
 ========================= >  Advance Vaibale static 
 
 declared by static keyword 
 value changeble
 public visiblity
-call by :: 
+call by :: (scope Resolution)
 call withaout object by (::) scope Resolution
+
+
 
 Static properties can be called directly - 
 without creating an instance(object) of a class.

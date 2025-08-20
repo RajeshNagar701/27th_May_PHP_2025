@@ -1,6 +1,7 @@
 <?php
 /*
 Advance Function  
+
 	Magic Methods / Build in Function/predefined 
 Magic methods are special methods which override PHP's default's 
 action when certain actions are performed on an object.
@@ -52,14 +53,16 @@ class abc
 	}
 	function __construct()
 	{
-		echo "Magic function run auto matecaly<br>";
+		echo "Magic function run automatic <br>";
 	}
-	function demo()
+	
+	function display()
 	{
-		$this->simple(); // normal function call by $this->
-		abc::__construct(); // __construct function call by ::(scopeResolution)
+		$this->simple();
+		abc::__construct();
 	}
+	
 }
 $obj= new abc;
-$obj->demo();
+$obj->display();
 ?>
