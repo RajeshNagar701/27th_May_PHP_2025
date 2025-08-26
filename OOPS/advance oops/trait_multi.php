@@ -3,14 +3,14 @@
 // useful in reduce reusable code and remove inheritance multiple
 trait abc
 {
-	public function test()
-		{
-		echo "This is test method <br>";
-		}
+	function test()
+	{
+	echo "This is test method <br>";
+	}
 }
 trait xyz
 {
-	public function sample()
+	function sample()
 	{
 		echo "this is sample method <br>";
 	}

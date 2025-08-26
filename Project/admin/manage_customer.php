@@ -64,7 +64,7 @@ include_once('header.php');
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Manage Product</h5>
+              <h5 class="card-title fw-semibold mb-4">Manage Customer</h5>
 			  <div class="container mt-3">
 				  <table class="table table-hover">
 					<thead>
@@ -76,25 +76,15 @@ include_once('header.php');
 					  </tr>
 					</thead>
 					<tbody>
-					 <?php
-					
-					foreach($prod_arr as $data)
-					{
-					?>
-					
 					  <tr>
-						<td><?php echo $data->id?></td>
-						<td><?php echo $data->name?></td>
-						<td><?php echo $data->email?></td>
-						<td><?php echo $data->comment?></td>
+						<td>John</td>
+						<td>Doe</td>
+						<td>john@example.com</td>
 						<td>
 							<a href="#" class="btn btn-primary">Edit</a>
 							<a href="#" class="btn btn-danger">Delete</a>
 						</td>
 					  </tr>
-					 <?php
-					}
-					 ?> 
 					  
 					</tbody>
 				  </table>

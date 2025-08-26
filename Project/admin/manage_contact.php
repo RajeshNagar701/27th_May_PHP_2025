@@ -64,21 +64,22 @@ include_once('header.php');
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Manage Product</h5>
+              <h5 class="card-title fw-semibold mb-4">Manage Contact</h5>
 			  <div class="container mt-3">
 				  <table class="table table-hover">
 					<thead>
 					  <tr>
-						<th>Firstname</th>
-						<th>Lastname</th>
+						<th>Id</th>
+						<th>Name</th>
 						<th>Email</th>
+						<th>Comment</th>
 						<th>Action</th>
 					  </tr>
 					</thead>
 					<tbody>
-					 <?php
+					  <?php
 					
-					foreach($prod_arr as $data)
+					foreach($cont_arr as $data)
 					{
 					?>
 					
@@ -95,7 +96,6 @@ include_once('header.php');
 					 <?php
 					}
 					 ?> 
-					  
 					</tbody>
 				  </table>
 				</div>
