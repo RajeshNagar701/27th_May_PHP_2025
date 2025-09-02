@@ -51,25 +51,25 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.php" class="logo">
+                        <a href="index" class="logo">
                             <img src="assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.php" class="active">Home</a></li>
-                            <li><a href="about.php">About Us</a></li>
-                            <li><a href="products.php">Products</a></li>
-							<li><a href="contact.php">Contact Us</a></li>
-							<li><a href="login.php">Login</a></li>
+                            <li><a href="index" class="active">Home</a></li>
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="products">Products</a></li>
+							<li><a href="contact">Contact Us</a></li>
+							<li><a href="login">Login</a></li>
 							
 							<!--
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="products.php">Products</a></li>
-                                    <li><a href="single-product.php">Single Product</a></li>
+                                    <li><a href="about">About Us</a></li>
+                                    <li><a href="products">Products</a></li>
+                                    <li><a href="single-product">Single Product</a></li>
                                 </ul>
                             </li>
                             -->

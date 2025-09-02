@@ -18,7 +18,30 @@ include_once('model.php'); // 1 model load
 			case '/dashboard':	
 				include('dashboard.php');
 			break;
+			
 			case '/add_categories':	
+				if(isset($_REQUEST['submit']))
+				{
+					$cate_name=$_REQUEST['cate_name'];
+					$cate_image=$_FILES['cate_image']['name'];
+					
+					if($_FILES['cate_image']['size']>0)
+					{
+						$path='assets/images/categories/'.$cate_image;  // path set
+						$dup_file=$_FILES['cate_image']['tmp_name']; // get duplicate file
+						move_uploaded_file($dup_file,$path);
+					}
+					
+					$arr=array("cate_name"=>$cate_name,"cate_image"=>$cate_image);
+					$res=$this->insert('categories',$arr);
+					if($res)
+					{
+						echo "<script>
+							alert('Categories Added Success');
+							window.location='add_categories';
+						</script>";
+					}
+				}
 				include('add_categories.php');
 			break;
 			case '/manage_categories':

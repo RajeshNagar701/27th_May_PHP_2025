@@ -133,9 +133,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-01.jpg" alt="">
@@ -156,9 +156,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-02.jpg" alt="">
@@ -179,9 +179,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-03.jpg" alt="">
@@ -202,9 +202,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-01.jpg" alt="">
@@ -250,9 +250,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-01.jpg" alt="">
@@ -273,9 +273,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-02.jpg" alt="">
@@ -296,9 +296,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-03.jpg" alt="">
@@ -319,9 +319,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-01.jpg" alt="">
@@ -367,9 +367,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-01.jpg" alt="">
@@ -390,9 +390,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-02.jpg" alt="">
@@ -413,9 +413,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-03.jpg" alt="">
@@ -436,9 +436,9 @@ include_once('header.php');
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.php"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-01.jpg" alt="">
@@ -477,7 +477,7 @@ include_once('header.php');
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                         <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                         <div class="main-border-button">
-                            <a href="products.php">Discover More</a>
+                            <a href="products">Discover More</a>
                         </div>
                     </div>
                 </div>

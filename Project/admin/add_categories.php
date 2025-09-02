@@ -67,21 +67,16 @@ include_once('header.php');
               <h5 class="card-title fw-semibold mb-4">Add Categories</h5>
               <div class="card">
                 <div class="card-body">
-                  <form>
+                  <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <label for="exampleInputEmail1" class="form-label">Categories Name</label>
+                      <input type="text" name="cate_name" class="form-control" id="exampleInputEmail1">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="exampleInputPassword1" class="form-label">Categories Image</label>
+                      <input type="file" name="cate_image" class="form-control">
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                   </form>
                 </div>
               </div>

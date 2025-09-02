@@ -46,12 +46,12 @@ include_once('header.php');
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
-                              <textarea name="message" rows="6" id="message" placeholder="Your message" required=""></textarea>
+                              <textarea name="comment" rows="6" id="message" placeholder="Your message" required=""></textarea>
                             </fieldset>
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
-                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                              <button type="submit" name="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
                           </div>
                         </div>
                       </form>

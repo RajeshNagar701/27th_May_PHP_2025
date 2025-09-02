@@ -19,8 +19,19 @@
 		 return $arr;
 	 }
 	 
-	 function insert(){
+	 function insert($tbl,$arr){
 		 
+		 //$arr=array("cate_name"=>$cate_name,"cate_image"=>$cate_image);
+		 
+		 $array_key=array_keys($arr);  // array("0"=>cate_name,"1"=>cate_image)
+		 $col=implode(",",$array_key); // cate_name,cate_image   // arr to string convert
+		 
+		 $array_value=array_values($arr);  
+		 $values=implode("','",$array_value); 
+		 
+		 $ins="insert into $tbl ($col) values('$values')"; //'men','men.jpg'
+		 $run=$this->$conn->query($ins);
+		 return $run;
 	 }
 	 
 	 function delete(){

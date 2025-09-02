@@ -69,10 +69,13 @@ include_once('header.php');
 				  <table class="table table-hover">
 					<thead>
 					  <tr>
-						<th>Firstname</th>
-						<th>Lastname</th>
-						<th>Email</th>
-						<th>Action</th>
+						<th>id</th>
+						<th>cate_id</th>
+						<th>pro_name</th>
+						<th>price</th>
+						<th>description</th>
+						<th>image</th>
+						<th>status</th>
 					  </tr>
 					</thead>
 					<tbody>
@@ -84,9 +87,11 @@ include_once('header.php');
 					
 					  <tr>
 						<td><?php echo $data->id?></td>
-						<td><?php echo $data->name?></td>
-						<td><?php echo $data->email?></td>
-						<td><?php echo $data->comment?></td>
+						<td><?php echo $data->pro_name?></td>
+						<td><?php echo $data->price?></td>
+						<td><?php echo $data->description?></td>
+						<td><?php echo $data->image?></td>
+						<td><?php echo $data->status?></td>
 						<td>
 							<a href="#" class="btn btn-primary">Edit</a>
 							<a href="#" class="btn btn-danger">Delete</a>
