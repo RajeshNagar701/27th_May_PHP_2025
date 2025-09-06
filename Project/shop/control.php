@@ -46,6 +46,40 @@ include_once('../admin/model.php'); // 1 model load
 			case '/login':	
 				include('login.php');
 			break;
+			case '/signup':
+				if(isset($_REQUEST['submit']))
+				{
+					$name=$_REQUEST['name'];
+					$email=$_REQUEST['email'];
+					$password=md5($_REQUEST['password']);
+					$mobile=$_REQUEST['mobile'];
+					$gender=$_REQUEST['gender'];
+					$lag_arr=$_REQUEST['lag'];
+					$lag=implode(',',$lag_arr);
+					
+					$image=$_FILES['image']['name'];
+					
+					if($_FILES['image']['size']>0)
+					{
+						$path='assets/images/customers/'.$image;  // path set
+						$dup_file=$_FILES['image']['tmp_name']; // get duplicate file
+						move_uploaded_file($dup_file,$path);
+					}
+					
+					$arr=array("name"=>$name,"email"=>$email,"password"=>$password,"mobile"=>$mobile,"gender"=>$gender
+					,"lag"=>$lag,"image"=>$image);
+					
+					$res=$this->insert('customer',$arr);
+					if($res)
+					{
+						echo "<script>
+							alert('Signup Success');
+							window.location='signup';
+						</script>";
+					}
+				}
+				include('signup.php');
+			break;
 			case '/single-product':	
 				include('single-product.php');
 			break;

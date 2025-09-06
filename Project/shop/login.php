@@ -41,7 +41,7 @@ include_once('header.php');
                             <fieldset>
                               <button type="submit" name="submit" >Login</button>
 							  <br><br>
-							  <a href="signup.php">If you Not Registered then Signup Here</a> 
+							  <a href="signup">If you Not Registered then Signup Here</a> 
 							</fieldset>
 						  </div>
                         </div>

@@ -69,22 +69,40 @@ include_once('header.php');
 				  <table class="table table-hover">
 					<thead>
 					  <tr>
-						<th>Firstname</th>
-						<th>Lastname</th>
+						<th>ID</th>
+						<th>Name</th>
 						<th>Email</th>
-						<th>Action</th>
+						<th>Mobile</th>
+						<th>Gender</th>
+						<th>Launguges</th>
+						<th>Image</th>
+						<th class="text-center">Action</th>
 					  </tr>
 					</thead>
 					<tbody>
+					
+					<?php
+					
+					foreach($cust_arr as $data)
+					{
+					?>
+					
 					  <tr>
-						<td>John</td>
-						<td>Doe</td>
-						<td>john@example.com</td>
+						<td><?php echo $data->id?></td>
+						<td><?php echo $data->name?></td>
+						<td><?php echo $data->email?></td>
+						<td><?php echo $data->mobile?></td>
+						<td><?php echo $data->gender?></td>
+						<td><?php echo $data->lag?></td>
+						<td><img src="../shop/assets/images/customers/<?php echo $data->image?>" width="50px" /></td>
 						<td>
 							<a href="#" class="btn btn-primary">Edit</a>
 							<a href="#" class="btn btn-danger">Delete</a>
 						</td>
 					  </tr>
+					 <?php
+					}
+					 ?> 
 					  
 					</tbody>
 				  </table>
