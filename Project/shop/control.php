@@ -44,6 +44,31 @@ include_once('../admin/model.php'); // 1 model load
 				include('contact.php');
 			break;
 			case '/login':	
+				if(isset($_REQUEST['submit']))
+				{
+					$email=$_REQUEST['email'];
+					$password=$_REQUEST['password'];
+					$md_password=md5($password);
+					
+					$where=array("email"=>$email,"password"=>$md_password);
+					
+					$run=$this->select_where('customer',$where);
+					$ans=$run->num_rows; // check row wise condition
+					if($ans==1)  // 1 means true
+					{
+						echo "<script>
+							alert('Login Success');
+							window.location='index';
+						</script>";
+					}
+					else
+					{
+						echo "<script>
+							alert('Login Failed due to wrong creadential');
+							window.location='login';
+						</script>";
+					}	
+				}
 				include('login.php');
 			break;
 			case '/signup':

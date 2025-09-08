@@ -13,6 +13,31 @@ include_once('model.php'); // 1 model load
 		switch($url)
 		{
 			case '/admin-login':	
+				if(isset($_REQUEST['submit']))
+				{
+					$email=$_REQUEST['email'];
+					$password=$_REQUEST['password'];
+					$md_password=md5($password);
+					
+					$where=array("email"=>$email,"password"=>$md_password);
+					
+					$run=$this->select_where('admin',$where);
+					$ans=$run->num_rows; // check row wise condition
+					if($ans==1)  // 1 means true
+					{
+						echo "<script>
+							alert('Login Success');
+							window.location='dashboard';
+						</script>";
+					}
+					else
+					{
+						echo "<script>
+							alert('Login Failed due to wrong creadential');
+							window.location='admin-login';
+						</script>";
+					}	
+				}
 				include('login.php');
 			break;
 			case '/dashboard':	
