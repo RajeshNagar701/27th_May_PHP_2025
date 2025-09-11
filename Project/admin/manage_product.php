@@ -94,7 +94,7 @@ include_once('header.php');
 						<td><?php echo $data->status?></td>
 						<td>
 							<a href="#" class="btn btn-primary">Edit</a>
-							<a href="#" class="btn btn-danger">Delete</a>
+							<a href="delete?dlt_product=<?php echo $data->id?>" class="btn btn-danger">Delete</a>
 						</td>
 					  </tr>
 					 <?php

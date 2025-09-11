@@ -10,6 +10,8 @@ include_once('../admin/model.php'); // 1 model load
 		
 		$url=$_SERVER['PATH_INFO']; // http://localhost/students/27th_May_PHP_2025/Project/admin/control.php
 		
+		session_start();
+
 		switch($url)
 		{
 			case '/':	
@@ -53,9 +55,16 @@ include_once('../admin/model.php'); // 1 model load
 					$where=array("email"=>$email,"password"=>$md_password);
 					
 					$run=$this->select_where('customer',$where);
+					
 					$ans=$run->num_rows; // check row wise condition
 					if($ans==1)  // 1 means true
 					{
+						$fetch=$run->fetch_object();
+
+						$_SESSION['u_id']=$fetch->id;
+						$_SESSION['u_name']=$fetch->name;
+						$_SESSION['u_email']=$fetch->email;
+
 						echo "<script>
 							alert('Login Success');
 							window.location='index';
@@ -71,6 +80,27 @@ include_once('../admin/model.php'); // 1 model load
 				}
 				include('login.php');
 			break;
+			
+			case '/user_profile':	
+				$where=array("id"=>$_SESSION['u_id']);
+				$run=$this->select_where('customer',$where);
+
+				$fetch=$run->fetch_object();
+				include('user_profile.php');
+			break;
+
+
+			case '/user_logout':	
+				
+				unset($_SESSION['u_id']);
+				unset($_SESSION['u_name']);
+				unset($_SESSION['u_email']);
+				echo "<script>
+					alert('Logout Success');
+					window.location='index';
+				</script>";
+			break;
+
 			case '/signup':
 				if(isset($_REQUEST['submit']))
 				{

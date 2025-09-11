@@ -48,7 +48,6 @@
 			$sel.=" and $array_key[$i]='$array_value[$i]'";
 			$i++;	
 		 }
-		 
 		 $run=$this->conn->query($sel);  // query run on db
 		
 		 /* login	
@@ -64,8 +63,20 @@
 	 }
 	 
 	 
-	 function delete(){
+	 function delete_where($tbl,$where){
 		 
+		 $del="delete from $tbl where 1=1";   // 1=1 means query continue
+		 
+		 $array_key=array_keys($where);
+		 $array_value=array_values($where);
+		 $i=0;
+		 foreach($where as $w)
+		 {
+			$del.=" and $array_key[$i]='$array_value[$i]'";
+			$i++;	
+		 }
+		 $run=$this->conn->query($del);  // query run on db
+		 return $run;
 	 }
 	 
 	 function update(){

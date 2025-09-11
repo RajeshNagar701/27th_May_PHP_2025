@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,17 +22,17 @@
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
+    <!--
 
 TemplateMo 571 Hexashop
 
 https://templatemo.com/tm-571-hexashop
 
 -->
-    </head>
-    
-    <body>
-    
+</head>
+
+<body>
+
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -40,10 +40,10 @@ https://templatemo.com/tm-571-hexashop
             <div></div>
             <div></div>
         </div>
-    </div>  
+    </div>
     <!-- ***** Preloader End ***** -->
-    
-    
+
+
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
@@ -60,10 +60,21 @@ https://templatemo.com/tm-571-hexashop
                             <li><a href="index" class="active">Home</a></li>
                             <li><a href="about">About Us</a></li>
                             <li><a href="products">Products</a></li>
-							<li><a href="contact">Contact Us</a></li>
-							<li><a href="login">Login</a></li>
-							
-							<!--
+                            <li><a href="contact">Contact Us</a></li>
+
+                            <?php
+                            if (isset($_SESSION['u_id'])) {
+                            ?>
+                                <li><a href="user_logout">Logout</a></li>
+                                <li><a href="user_profile">Hi .. <?php echo $_SESSION['u_name']?></a></li>
+                            <?php
+                            } else {
+                            ?>
+                                <li><a href="login">Login</a></li>
+                            <?php
+                            }
+                            ?>
+                            <!--
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
@@ -73,7 +84,7 @@ https://templatemo.com/tm-571-hexashop
                                 </ul>
                             </li>
                             -->
-                        </ul>        
+                        </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
