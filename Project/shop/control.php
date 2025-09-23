@@ -59,16 +59,28 @@ include_once('../admin/model.php'); // 1 model load
 					$ans=$run->num_rows; // check row wise condition
 					if($ans==1)  // 1 means true
 					{
+						
 						$fetch=$run->fetch_object();
+						
+						if($fetch->status=="Unblock")
+						{
+							$_SESSION['u_id']=$fetch->id;
+							$_SESSION['u_name']=$fetch->name;
+							$_SESSION['u_email']=$fetch->email;
 
-						$_SESSION['u_id']=$fetch->id;
-						$_SESSION['u_name']=$fetch->name;
-						$_SESSION['u_email']=$fetch->email;
-
-						echo "<script>
-							alert('Login Success');
-							window.location='index';
-						</script>";
+							echo "<script>
+								alert('Login Success');
+								window.location='index';
+							</script>";
+						}
+						else
+						{
+							
+							echo "<script>
+								alert('Login Failed due to Blocked Account');
+								window.location='index';
+							</script>";
+						}
 					}
 					else
 					{
@@ -89,7 +101,66 @@ include_once('../admin/model.php'); // 1 model load
 				include('user_profile.php');
 			break;
 
-
+			case '/edit_user':	
+				if(isset($_REQUEST['btn_edituser']))
+				{
+					$id=$_REQUEST['btn_edituser'];
+					$where=array("id"=>$id);
+					$run=$this->select_where('customer',$where);
+					$fetch=$run->fetch_object();
+					
+					$old_img=$fetch->image;
+					
+					
+					if(isset($_REQUEST['submit']))
+					{
+						$name=$_REQUEST['name'];
+						$email=$_REQUEST['email'];
+						$mobile=$_REQUEST['mobile'];
+						$gender=$_REQUEST['gender'];
+						$lag_arr=$_REQUEST['lag'];
+						$lag=implode(',',$lag_arr);
+						
+						if($_FILES['image']['size']>0)
+						{
+							
+							$image=$_FILES['image']['name'];
+							$path='assets/images/customers/'.$image;  // path set
+							$dup_file=$_FILES['image']['tmp_name']; // get duplicate file
+							move_uploaded_file($dup_file,$path);
+							
+							$arr=array("name"=>$name,"email"=>$email,"mobile"=>$mobile,"gender"=>$gender
+							,"lag"=>$lag,"image"=>$image);
+							
+							$res=$this->update('customer',$arr,$where);
+							if($res)
+							{
+								unlink('assets/images/customers/'.$old_img);
+								echo "<script>
+									alert('Update Success');
+									window.location='user_profile';
+								</script>";
+							}
+							
+						}
+						else
+						{
+							$arr=array("name"=>$name,"email"=>$email,"mobile"=>$mobile,"gender"=>$gender
+							,"lag"=>$lag);
+							
+							$res=$this->update('customer',$arr,$where);
+							echo "<script>
+								alert('Update Success');
+								window.location='user_profile';
+							</script>";
+						}
+						
+					}
+				}
+				include('edit_user.php');
+			break;
+			
+			
 			case '/user_logout':	
 				
 				unset($_SESSION['u_id']);

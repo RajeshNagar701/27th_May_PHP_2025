@@ -1,6 +1,6 @@
 <?php
 
-if($_SESSION['a_id'])
+if(isset($_SESSION['a_id']))
 {
   echo "<script>
 	window.location='dashboard';

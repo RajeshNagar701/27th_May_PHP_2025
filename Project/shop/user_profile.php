@@ -32,8 +32,8 @@ include_once('header.php');
                         <span>Email : <?php echo $fetch->email?></span>
                         <span>Mobile : <?php echo $fetch->mobile?></span>
                         <span>Gender : <?php echo $fetch->gender?></span>
-                        <span>Lag : <?php echo $fetch->lag?></span>
-                        
+                        <span class="mb-5">Lag : <?php echo $fetch->lag?></span>
+                        <a href="edit_user?btn_edituser=<?php echo $fetch->id?>" class="btn btn-danger">Edit</a>
                     </div>
                 </div>
             </div>

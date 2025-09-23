@@ -193,6 +193,50 @@ include_once('model.php'); // 1 model load
 			break;	
 
 
+			case '/status':
+				
+				if(isset($_REQUEST['status_customer']))
+				{
+					$id=$_REQUEST['status_customer'];
+					$where=array("id"=>$id);
+
+					$run=$this->select_where('customer',$where);
+					$fetch=$run->fetch_object();
+					$status=$fetch->status;
+					
+					if($status=="Block")
+					{
+						$arr=array("status"=>"Unblock");
+						$res=$this->update('customer',$arr,$where);
+						if($res)
+						{
+							echo "<script>
+								alert('customer Unblock Success');
+								window.location='manage_customer';
+							</script>";
+						}
+					}
+					else
+					{
+						$arr=array("status"=>"Block");
+						$res=$this->update('customer',$arr,$where);
+						if($res)
+						{
+							unset($_SESSION['u_id']);
+							unset($_SESSION['u_name']);
+							unset($_SESSION['u_email']);
+							echo "<script>
+								alert('customer Block Success');
+								window.location='manage_customer';
+							</script>";
+						}
+					}
+
+					
+				}
+			
+			break;
+
 		}
 			
 	 }

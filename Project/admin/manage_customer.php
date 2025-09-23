@@ -96,8 +96,12 @@ include_once('header.php');
 						<td><?php echo $data->lag?></td>
 						<td><img src="../shop/assets/images/customers/<?php echo $data->image?>" width="50px" /></td>
 						<td>
-							<a href="#" class="btn btn-primary">Edit</a>
+						  <a href="#" class="btn btn-primary">Edit</a>
 						  <a href="delete?dlt_customer=<?php echo $data->id?>" class="btn btn-danger">Delete</a>
+						  
+						  <a href="status?status_customer=<?php echo $data->id?>" class="btn btn-danger">
+							<?php echo $data->status?>
+						  </a>
 						</td>
 					  </tr>
 					 <?php

@@ -87,7 +87,7 @@ include_once('header.php');
 						<td><?php echo $data->cate_name?></td>
 						<td><img src="assets/images/categories/<?php echo $data->cate_image?>" width="50px" /></td>
 						<td>
-							<a href="#" class="btn btn-primary">Edit</a>
+							<a href="edit_categories?btn_editcate=<?php echo $data->id?>" class="btn btn-primary">Edit</a>
 							<a href="delete?dlt_categories=<?php echo $data->id?>" class="btn btn-danger">Delete</a>
 						</td>
 					  </tr>

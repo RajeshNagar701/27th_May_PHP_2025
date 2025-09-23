@@ -79,8 +79,39 @@
 		 return $run;
 	 }
 	 
-	 function update(){
+	 // update customer set col1=value1,col2=value2  where condition
+	 function update($tbl,$arr,$where){
 		 
+		 $upd="update $tbl set ";
+		 
+		 $array_key=array_keys($arr);
+		 $array_value=array_values($arr);
+		 $j=0;
+		 foreach($arr as $d)
+		 {
+			 $count=count($arr);
+			 if($count==$j+1)
+			 {
+				 $upd.="$array_key[$j]='$array_value[$j]'";
+			 }
+			 else
+			 {
+				 $upd.="$array_key[$j]='$array_value[$j]',";
+				 $j++;
+			 }	 
+		 }
+		 
+		 $upd.=" where 1=1";   // 1=1 means query continue
+		 $w_key=array_keys($where);
+		 $w_value=array_values($where);
+		 $i=0;
+		 foreach($where as $w)
+		 {
+			$upd.=" and $w_key[$i]='$w_value[$i]'";
+			$i++;	
+		 }
+		 $run=$this->conn->query($upd);  // query run on db
+		 return $run;
 	 }
 	 
  }
