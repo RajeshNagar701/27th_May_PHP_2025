@@ -29,10 +29,18 @@ include_once('model.php'); // 1 model load
 					{
 
 						$fetch=$run->fetch_object();
-
+						
 						$_SESSION['a_id']=$fetch->id;
 						$_SESSION['a_name']=$fetch->name;
 						$_SESSION['a_email']=$fetch->email;
+						
+						
+						if(isset($_REQUEST['rem']))
+							{
+								setcookie('aname',$email,time()+(1*60*60));
+								setcookie('apass',$password,time()+(1*60*60));
+							}
+							
 						echo "<script>
 							alert('Login Success');
 							window.location='dashboard';

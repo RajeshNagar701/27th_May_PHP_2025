@@ -67,7 +67,14 @@ include_once('../admin/model.php'); // 1 model load
 							$_SESSION['u_id']=$fetch->id;
 							$_SESSION['u_name']=$fetch->name;
 							$_SESSION['u_email']=$fetch->email;
-
+							
+							if(isset($_REQUEST['rem']))
+							{
+								setcookie('uname',$email,time()+(1*60*60));
+								setcookie('pass',$password,time()+(1*60*60));
+							}
+							
+							
 							echo "<script>
 								alert('Login Success');
 								window.location='index';

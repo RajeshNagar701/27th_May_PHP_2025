@@ -29,12 +29,17 @@ include_once('header.php');
                          
                           <div class="col-lg-12 mb-5">
                             <fieldset>
-                              <input name="email" type="text" id="email" placeholder="Your email" required="">
+                              <input name="email" value="<?php if(isset($_COOKIE['uname'])){ echo $_COOKIE['uname'];}?>" type="text" id="email" placeholder="Your email" required="">
                             </fieldset>
                           </div>
                            <div class="col-lg-12 mb-5">
                             <fieldset>
-                              <input name="password" type="password" id="password" placeholder="Your password" required="">
+                              <input name="password" value="<?php if(isset($_COOKIE['pass'])){ echo $_COOKIE['pass'];}?>" type="password" id="password" placeholder="Your password" required="">
+                            </fieldset>
+                          </div>
+						  <div class="col-lg-12 mb-5">
+                            <fieldset>
+                              <input name="rem" type="checkbox">
                             </fieldset>
                           </div>
                           <div class="col-lg-12">
