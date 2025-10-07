@@ -26,26 +26,3 @@
 </script>
 
 <hr>
-
-
-<button onclick="plus1()">+</button>
-	<input type="text" id="cart1" value="1">
-<button onclick="minus1()">-</button>
-
-<script>
-	function plus1()
-	{
-		var num=document.getElementById('cart1').value;
-		num++;
-		document.getElementById('cart1').value=num;
-	}
-	function minus1()
-	{
-		var num=document.getElementById('cart1').value;
-		if(num>0)
-		{
-			num--;
-			document.getElementById('cart1').value=num;
-		}
-	}
-</script>
