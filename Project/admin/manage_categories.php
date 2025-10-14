@@ -1,6 +1,7 @@
 <?php
 include_once('header.php');
 ?>
+
     <!--  Main wrapper -->
     <div class="body-wrapper">
       <!--  Header Start -->
@@ -66,7 +67,7 @@ include_once('header.php');
             <div class="card-body">
               <h5 class="card-title fw-semibold mb-4">Manage Categories</h5>
 			  <div class="container mt-3">
-				  <table class="table table-hover">
+				  <table id="mytable" class="table table-hover">
 					<thead>
 					  <tr>
 						<th>Id</th>
@@ -103,7 +104,6 @@ include_once('header.php');
       </div>
     </div>
   </div>
-  <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/sidebarmenu.js"></script>
   <script src="./assets/js/app.min.js"></script>

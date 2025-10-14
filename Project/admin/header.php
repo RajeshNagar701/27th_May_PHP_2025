@@ -22,6 +22,28 @@ else
   <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
   <link rel="shortcut icon" type="image/png" href="./assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="./assets/css/styles.min.css" />
+  
+
+		<!--
+	1 Include jquery File  
+	-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+	<!--
+	2 Include these two files 
+	-->
+	<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+	<!--
+	3 Call this single function 
+	-->
+	<script>
+		$(document).ready(function() 
+		{
+			$('#mytable').DataTable();
+		} );
+	</script>
 </head>
 
 <body>

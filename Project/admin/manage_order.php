@@ -66,7 +66,7 @@ include_once('header.php');
             <div class="card-body">
               <h5 class="card-title fw-semibold mb-4">Manage Order</h5>
 			  <div class="container mt-3">
-				  <table class="table table-hover">
+				  <table id="m" class="table table-hover">
 					<thead>
 					  <tr>
 						<th>Firstname</th>
