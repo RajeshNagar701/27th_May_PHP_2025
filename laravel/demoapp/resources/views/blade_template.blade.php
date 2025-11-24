@@ -123,8 +123,6 @@ which can be extended by other files.
 
 		@stack  render the complete stack content , pass the name of the stake
 		@push and @endpush  is used to push the stack
-
-
 		
 		*/
 		?>
