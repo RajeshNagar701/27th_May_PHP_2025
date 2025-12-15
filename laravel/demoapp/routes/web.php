@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,17 +26,37 @@ Route::get('/about', function () {
     return view('website/about');
 });
 
-Route::get('/contact', function () {
-    return view('website/contact');
+Route::get('/contact',[ContactController::class,'index']);
+
+
+Route::get('/shop',[ProductController::class,'index']);
+Route::get('/shop-single',[ProductController::class,'single_shop']);
+
+
+//=============Admin Routes======================================================
+
+
+Route::get('/admin-login',[AdminController::class,'index']);
+
+Route::get('/dashboard', function () {
+    return view('admin/dashboard');
 });
 
-Route::get('/shop', function () {
-    return view('website/shop');
-});
+Route::get('/add_categories',[CategoryController::class,'create']);
+Route::get('/manage_categories',[CategoryController::class,'show']);
 
-Route::get('/shop-single', function () {
-    return view('website/shop-single');
-});
+Route::get('/add_product',[ProductController::class,'create']);
+
+Route::get('/manage_product',[ProductController::class,'show']);
+
+Route::get('/manage_customer',[CustomerController::class,'show']);
+
+Route::get('/manage_contact',[ContactController::class,'show']);
+
+
+
+
+
 
 
 
