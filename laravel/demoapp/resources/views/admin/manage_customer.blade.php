@@ -74,7 +74,7 @@
 						<th>Email</th>
 						<th>Mobile</th>
 						<th>Gender</th>
-						<th>Launguges</th>
+						<th>Hobby</th>
 						<th>Image</th>
 						<th class="text-center">Action</th>
 					  </tr>
@@ -93,8 +93,8 @@
 						<td><?php echo $data->email?></td>
 						<td><?php echo $data->mobile?></td>
 						<td><?php echo $data->gender?></td>
-						<td><?php echo $data->lag?></td>
-						<td><img src="../shop/assets/images/customers/<?php echo $data->image?>" width="50px" /></td>
+						<td><?php echo $data->hobby?></td>
+						<td><?php echo $data->image?><img src="../shop/assets/images/customers/<?php echo $data->image?>" width="50px" /></td>
 						<td>
 						  <a href="#" class="btn btn-primary">Edit</a>
 						  <a href="delete?dlt_customer=<?php echo $data->id?>" class="btn btn-danger">Delete</a>

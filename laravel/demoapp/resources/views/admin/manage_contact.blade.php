@@ -81,7 +81,6 @@
 
                 foreach ($cont_arr as $data) {
                 ?>
-
                   <tr>
                     <td><?php echo $data->id ?></td>
                     <td><?php echo $data->name ?></td>

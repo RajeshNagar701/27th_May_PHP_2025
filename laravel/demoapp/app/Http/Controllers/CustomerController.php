@@ -12,10 +12,7 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        
-    }
+    public function index() {}
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +43,8 @@ class CustomerController extends Controller
      */
     public function show(customer $customer)
     {
-        return view('admin/manage_customer');
+        $cust_arr = customer::all();  // select * from $tbl
+        return view('admin/manage_customer', ['cust_arr' => $cust_arr]);
     }
 
     /**

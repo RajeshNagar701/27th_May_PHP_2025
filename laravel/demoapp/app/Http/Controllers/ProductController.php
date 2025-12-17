@@ -53,7 +53,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        return view('admin/manage_product');
+        $prod_arr = product::all(); 
+        return view('admin/manage_product',['prod_arr'=>$prod_arr]);
     }
 
     /**

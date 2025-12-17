@@ -44,13 +44,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/add_categories',[CategoryController::class,'create']);
 Route::get('/manage_categories',[CategoryController::class,'show']);
-
 Route::get('/add_product',[ProductController::class,'create']);
-
 Route::get('/manage_product',[ProductController::class,'show']);
-
 Route::get('/manage_customer',[CustomerController::class,'show']);
-
 Route::get('/manage_contact',[ContactController::class,'show']);
 
 

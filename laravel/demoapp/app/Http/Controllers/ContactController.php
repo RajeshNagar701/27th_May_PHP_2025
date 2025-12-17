@@ -46,7 +46,8 @@ class ContactController extends Controller
      */
     public function show(contact $contact)
     {
-        return view('admin/manage_contact');
+        $cont_arr = contact::all(); // contact::find($id);
+        return view('admin/manage_contact', ["cont_arr" => $cont_arr]);
     }
 
     /**

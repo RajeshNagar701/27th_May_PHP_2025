@@ -1,4 +1,18 @@
 <?php
+/*
+In Laravel, the "model" is the 
+Eloquent ORM (Object-Relational Mapper) 
+which provides an Active Record implementation for interacting with your database. 
+
+TABLES => model =>  controleer   
+posts      post     postController
+
+php artisan make :model post -mcr 
+tables
+model
+controller
+*/
+
 
 namespace App\Http\Controllers;
 

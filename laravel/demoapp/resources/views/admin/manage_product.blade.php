@@ -70,11 +70,12 @@
 					  <tr>
 						<th>id</th>
 						<th>cate_id</th>
-						<th>pro_name</th>
-						<th>price</th>
-						<th>description</th>
-						<th>image</th>
-						<th>status</th>
+						<th>prod_name</th>
+						<th>main_price</th>
+            <th>disc_price</th>
+						<th>short_desc</th>
+            <th>long_desc</th>
+						<th>prod_image</th>
 					  </tr>
 					</thead>
 					<tbody>
@@ -86,11 +87,12 @@
 					
 					  <tr>
 						<td><?php echo $data->id?></td>
-						<td><?php echo $data->pro_name?></td>
-						<td><?php echo $data->price?></td>
-						<td><?php echo $data->description?></td>
-						<td><?php echo $data->image?></td>
-						<td><?php echo $data->status?></td>
+						<td><?php echo $data->prod_name?></td>
+						<td><?php echo $data->main_price?></td>
+            <td><?php echo $data->disc_price?></td>
+						<td><?php echo $data->short_desc?></td>
+            <td><?php echo $data->long_desc?></td>
+						<td><?php echo $data->prod_image?></td>
 						<td>
 							<a href="#" class="btn btn-primary">Edit</a>
 							<a href="delete?dlt_product=<?php echo $data->id?>" class="btn btn-danger">Delete</a>

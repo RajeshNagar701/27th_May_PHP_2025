@@ -46,7 +46,8 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-         return view('admin/manage_categories');
+         $cate_arr=category::all();  // select * from $tbl
+         return view('admin/manage_categories',['cate_arr'=>$cate_arr]);
     }
 
     /**
