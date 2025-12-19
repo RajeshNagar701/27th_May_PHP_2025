@@ -26,8 +26,8 @@ Route::get('/about', function () {
     return view('website/about');
 });
 
-Route::get('/contact',[ContactController::class,'index']);
-
+Route::get('/contact',[ContactController::class,'create']);
+Route::post('/contact',[ContactController::class,'store']);
 
 Route::get('/shop',[ProductController::class,'index']);
 Route::get('/shop-single',[ProductController::class,'single_shop']);
@@ -43,6 +43,8 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/add_categories',[CategoryController::class,'create']);
+Route::post('/insert_categories',[CategoryController::class,'store']);
+
 Route::get('/manage_categories',[CategoryController::class,'show']);
 Route::get('/add_product',[ProductController::class,'create']);
 Route::get('/manage_product',[ProductController::class,'show']);

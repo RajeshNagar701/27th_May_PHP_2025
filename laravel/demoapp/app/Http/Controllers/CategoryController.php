@@ -35,7 +35,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new category();
+        $data->cate_name=$request->cate_name;  //$_REQUEST['name'];
+       
+        $image = $request->file('cate_img');  // image get
+        $filename = time() . '_img.' . $request->file('cate_img')->getClientOriginalExtension(); // name set
+        $image->move('upload/categories', $filename); // move in public folder
+        $data->cate_img = $filename; // store in name in database
+
+        $data->save();
+        echo "<script>
+        alert('Category added Success');
+        window.location='/add_categories';
+        </script>";
     }
 
     /**

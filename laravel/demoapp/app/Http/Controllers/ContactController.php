@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('website/contact');
+        
     }
 
     /**
@@ -24,7 +24,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('website/contact');
     }
 
     /**
@@ -35,7 +35,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new contact;
+        $data->name=$request->name;  //$_REQUEST['name'];
+        $data->email=$request->email;
+        $data->comment=$request->comment;
+        $data->save();
+        echo "<script>
+        alert('Contact Inquiry Success');
+        window.location='/contact';
+        </script>";
     }
 
     /**
