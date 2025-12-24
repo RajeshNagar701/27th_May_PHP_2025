@@ -87,8 +87,14 @@ class ContactController extends Controller
      * @param  \App\Models\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contact $contact)
+    public function destroy(contact $contact,$id)
     {
-        //
+            //contact::all()   select * from contact
+        $data=contact::find($id); // select * from contact whee id=5
+        $data->delete();
+        echo "<script>
+        alert('Contact Delete Success');
+        window.location='/manage_contact';
+        </script>";
     }
 }

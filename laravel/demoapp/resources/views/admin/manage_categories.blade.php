@@ -85,10 +85,10 @@
                   <tr>
                     <td><?php echo $data->id ?></td>
                     <td><?php echo $data->cate_name ?></td>
-                    <td><?php echo $data->cate_img ?><img src="" width="50px" /></td>
+                    <td><img src="{{url('upload/categories/'.$data->cate_img)}}" width="50px" /></td>
                     <td>
                       <a href="edit_categories?btn_editcate=<?php echo $data->id ?>" class="btn btn-primary">Edit</a>
-                      <a href="delete?dlt_categories=<?php echo $data->id ?>" class="btn btn-danger">Delete</a>
+                      <a href="{{url('manage_categories/'.$data->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
                 <?php

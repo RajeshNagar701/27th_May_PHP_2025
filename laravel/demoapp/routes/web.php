@@ -46,10 +46,20 @@ Route::get('/add_categories',[CategoryController::class,'create']);
 Route::post('/insert_categories',[CategoryController::class,'store']);
 
 Route::get('/manage_categories',[CategoryController::class,'show']);
+Route::get('/manage_categories/{id}',[CategoryController::class,'destroy']);
+
 Route::get('/add_product',[ProductController::class,'create']);
+Route::post('/insert_product',[ProductController::class,'store']);
+
+
 Route::get('/manage_product',[ProductController::class,'show']);
+Route::get('/manage_product/{id}',[ProductController::class,'destroy']);
+
 Route::get('/manage_customer',[CustomerController::class,'show']);
+Route::get('/manage_customer/{id}',[CustomerController::class,'destroy']);
+
 Route::get('/manage_contact',[ContactController::class,'show']);
+Route::get('/manage_contact/{id}',[ContactController::class,'destroy']);
 
 
 

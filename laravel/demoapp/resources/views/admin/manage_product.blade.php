@@ -87,15 +87,16 @@
 					
 					  <tr>
 						<td><?php echo $data->id?></td>
+            <td><?php echo $data->cate_id?></td>
 						<td><?php echo $data->prod_name?></td>
 						<td><?php echo $data->main_price?></td>
             <td><?php echo $data->disc_price?></td>
 						<td><?php echo $data->short_desc?></td>
             <td><?php echo $data->long_desc?></td>
-						<td><?php echo $data->prod_image?></td>
+            <td><img src="{{url('upload/product/'.$data->prod_image)}}" width="50px" /></td>
 						<td>
 							<a href="#" class="btn btn-primary">Edit</a>
-							<a href="delete?dlt_product=<?php echo $data->id?>" class="btn btn-danger">Delete</a>
+							<a href="{{url('manage_product/'.$data->id)}}" class="btn btn-danger">Delete</a>
 						</td>
 					  </tr>
 					 <?php

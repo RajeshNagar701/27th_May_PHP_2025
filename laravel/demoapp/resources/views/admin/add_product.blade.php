@@ -67,19 +67,39 @@
               <h5 class="card-title fw-semibold mb-4">Add Product</h5>
               <div class="card">
                 <div class="card-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <form action="{{url('insert_product')}}" method="post" enctype="multipart/form-data">
+                  @csrf
+                     <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Select Categories</label>
+                      <select name="cate_id" class="form-control" >
+                        @foreach($categories as $d)
+                        <option value="{{$d->id}}">{{$d->cate_name}}</option>
+                        @endforeach
+                      </select>
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                      <input type="text" name="prod_name" class="form-control">  
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                     <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Product Price</label>
+                      <input type="number" name="main_price" class="form-control">  
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Discount Price</label>
+                      <input type="number" name="disc_price" class="form-control">  
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Short Discription</label>
+                      <textarea name="short_desc" class="form-control">  </textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Long Discription</label>
+                      <textarea name="long_desc" class="form-control">  </textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Product Image</label>
+                      <input type="file" name="prod_image" class="form-control">  
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>

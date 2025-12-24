@@ -91,8 +91,15 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(category $category,$id)
     {
-        //
+        $data=category::find($id); // select * from contact whee id=5
+        $cate_img=$data->cate_img;
+        $data->delete();
+        unlink('upload/categories/'.$cate_img);
+        echo "<script>
+        alert('Category Delete Success');
+        window.location='/manage_categories';
+        </script>";
     }
 }

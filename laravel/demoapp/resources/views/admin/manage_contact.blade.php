@@ -88,7 +88,7 @@
                     <td><?php echo $data->comment ?></td>
                     <td>
                       <a href="#" class="btn btn-primary">Edit</a>
-                      <a href="delete?dlt_contact=<?php echo $data->id ?>" class="btn btn-danger">Delete</a>
+                      <a href="{{url('manage_contact/'.$data->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
                 <?php
