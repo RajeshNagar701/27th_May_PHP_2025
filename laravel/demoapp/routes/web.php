@@ -26,6 +26,11 @@ Route::get('/about', function () {
     return view('website/about');
 });
 
+Route::get('/login',[CustomerController::class,'login']);
+
+Route::get('/signup',[CustomerController::class,'create']);
+Route::post('/signup',[CustomerController::class,'store']);
+
 Route::get('/contact',[ContactController::class,'create']);
 Route::post('/contact',[ContactController::class,'store']);
 

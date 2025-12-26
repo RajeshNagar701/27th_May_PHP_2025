@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -12,7 +13,13 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {}
+    public function index() {
+
+    }
+
+    public function login() {
+        return view('website/login');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -21,7 +28,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('website/singup');
     }
 
     /**
@@ -32,7 +39,25 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new customer();
+        $data->name=$request->name;  
+        $data->email=$request->email;
+        $data->password=Hash::make($request->password);
+        $data->gender=$request->gender;
+        $data->hobby=implode(",",$request->hobby); // arr to string
+        $data->mobile=$request->mobile;
+      
+
+        $image = $request->file('image');  // image get
+        $filename = time() . '_img.' . $request->file('image')->getClientOriginalExtension(); // name set
+        $image->move('upload/customers', $filename); // move in public folder
+        $data->image = $filename; // store in name in database
+
+        $data->save();
+        echo "<script>
+        alert('Signup Success');
+        window.location='/login';
+        </script>";
     }
 
     /**

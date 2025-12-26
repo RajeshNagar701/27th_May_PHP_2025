@@ -78,6 +78,9 @@ https://templatemo.com/tm-559-zay-shop
                         <li class="nav-item">
                             <a class="nav-link" href="contact">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">

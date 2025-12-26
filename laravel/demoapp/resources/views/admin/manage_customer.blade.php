@@ -94,7 +94,7 @@
 						<td><?php echo $data->mobile?></td>
 						<td><?php echo $data->gender?></td>
 						<td><?php echo $data->hobby?></td>
-						<td><?php echo $data->image?><img src="../shop/assets/images/customers/<?php echo $data->image?>" width="50px" /></td>
+						<td><img src="{{url('upload/customers/'.$data->image)}}" width="50px" /></td>
 						<td>
 						  <a href="#" class="btn btn-primary">Edit</a>
 						  <a href="{{url('manage_customer/'.$data->id)}}" class="btn btn-danger">Delete</a>
