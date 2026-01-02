@@ -13,12 +13,57 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index() {}
 
+    public function login()
+    {
+        return view('website/login');
     }
 
-    public function login() {
-        return view('website/login');
+    public function login_auth(Request $request)
+    {
+        $data = customer::where('email', $request->email)->first();   // get() all in arr // first -> single data
+        if (! $data || ! Hash::check($request->password, $data->password)) {
+            echo "<script>
+             alert('Wrong Creadential so Login Failed');
+             window.location='/login';
+             </script>";
+        } else {
+            if ($data->status == "Unblock") {
+
+                // create session
+                session()->put('sname',$data->name); // $_SESSION['sname']=$data->name;
+                session()->put('sid',$data->id);
+
+                echo "<script> alert('Login Success');
+                window.location='/';</script>";
+            } else {
+                echo "<script> alert('Blocked Account so Login Failed');
+                window.location='/login';
+                </script>";
+            }
+        }
+    }
+
+    public function userlogout()
+    {
+        session()->pull('sid');
+        session()->pull('sname');
+        echo "<script> alert('Logout Success');
+        window.location='/login';
+        </script>";
+    }
+
+    public function userprofile()
+    {
+        $customer = customer::where('id',session('sid'))->first(); 
+        return view('website/userprofile',['customer' => $customer]);
+    }
+    
+     public function edit_profile()
+    {
+        $customer = customer::where('id',session('sid'))->first(); 
+        return view('website/edit_profile',['customer' => $customer]);
     }
 
     /**
@@ -39,14 +84,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $data=new customer();
-        $data->name=$request->name;  
-        $data->email=$request->email;
-        $data->password=Hash::make($request->password);
-        $data->gender=$request->gender;
-        $data->hobby=implode(",",$request->hobby); // arr to string
-        $data->mobile=$request->mobile;
-      
+        $data = new customer();
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = Hash::make($request->password);
+        $data->gender = $request->gender;
+        $data->hobby = implode(",", $request->hobby); // arr to string
+        $data->mobile = $request->mobile;
+
 
         $image = $request->file('image');  // image get
         $filename = time() . '_img.' . $request->file('image')->getClientOriginalExtension(); // name set
@@ -101,12 +146,12 @@ class CustomerController extends Controller
      * @param  \App\Models\customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(customer $customer,$id)
+    public function destroy(customer $customer, $id)
     {
-        $data=customer::find($id); // select * from contact whee id=5
-        $image=$data->image;
+        $data = customer::find($id); // select * from contact whee id=5
+        $image = $data->image;
         $data->delete();
-        unlink('upload/product/'.$image);
+        unlink('upload/product/' . $image);
         echo "<script>
         alert('Customer Delete Success');
         window.location='/manage_customer';

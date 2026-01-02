@@ -27,6 +27,13 @@ Route::get('/about', function () {
 });
 
 Route::get('/login',[CustomerController::class,'login']);
+Route::post('/login_auth',[CustomerController::class,'login_auth']);
+
+Route::get('/userlogout',[CustomerController::class,'userlogout']);
+
+Route::get('/userprofile',[CustomerController::class,'userprofile']);
+Route::get('/edit_profile/{id}',[CustomerController::class,'edit_profile']);
+
 
 Route::get('/signup',[CustomerController::class,'create']);
 Route::post('/signup',[CustomerController::class,'store']);
