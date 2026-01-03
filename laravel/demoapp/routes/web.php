@@ -33,7 +33,7 @@ Route::get('/userlogout',[CustomerController::class,'userlogout']);
 
 Route::get('/userprofile',[CustomerController::class,'userprofile']);
 Route::get('/edit_profile/{id}',[CustomerController::class,'edit_profile']);
-
+Route::post('/update_profile/{id}',[CustomerController::class,'update']);
 
 Route::get('/signup',[CustomerController::class,'create']);
 Route::post('/signup',[CustomerController::class,'store']);

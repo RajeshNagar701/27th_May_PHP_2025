@@ -32,8 +32,8 @@ class CustomerController extends Controller
             if ($data->status == "Unblock") {
 
                 // create session
-                session()->put('sname',$data->name); // $_SESSION['sname']=$data->name;
-                session()->put('sid',$data->id);
+                session()->put('sname', $data->name); // $_SESSION['sname']=$data->name;
+                session()->put('sid', $data->id);
 
                 echo "<script> alert('Login Success');
                 window.location='/';</script>";
@@ -56,14 +56,14 @@ class CustomerController extends Controller
 
     public function userprofile()
     {
-        $customer = customer::where('id',session('sid'))->first(); 
-        return view('website/userprofile',['customer' => $customer]);
+        $customer = customer::where('id', session('sid'))->first();
+        return view('website/userprofile', ['customer' => $customer]);
     }
-    
-     public function edit_profile()
+
+    public function edit_profile($id)
     {
-        $customer = customer::where('id',session('sid'))->first(); 
-        return view('website/edit_profile',['customer' => $customer]);
+        $data = customer::find($id);
+        return view('website/edit_profile', ['customer' => $data]);
     }
 
     /**
@@ -135,9 +135,31 @@ class CustomerController extends Controller
      * @param  \App\Models\customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, customer $customer)
+    public function update(Request $request, customer $customer, $id)
     {
-        //
+        $data = customer::find($id);
+
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->gender = $request->gender;
+        $data->hobby = implode(",", $request->hobby); // arr to string
+        $data->mobile = $request->mobile;
+
+        if ($request->hasfile('image')) {
+
+            $old_image = $data->image;
+            unlink('upload/customers/'.$old_image);
+
+            $image = $request->file('image');  // image get
+            $filename = time() . '_img.' . $request->file('image')->getClientOriginalExtension(); // name set
+            $image->move('upload/customers', $filename); // move in public folder
+            $data->image = $filename; // store in name in database
+        }
+        $data->update();
+        echo "<script>
+        alert('Update Success');
+        window.location='/userprofile';
+        </script>";
     }
 
     /**
