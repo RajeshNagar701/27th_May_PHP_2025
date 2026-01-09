@@ -15,6 +15,16 @@
 <!-- Start Contact -->
 <div class="container py-5">
     <div class="row py-5">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <form action="{{url('login_auth')}}" class="col-md-9 m-auto" method="post" role="form">
             @csrf
             <div class="row">

@@ -22,6 +22,11 @@ class CustomerController extends Controller
 
     public function login_auth(Request $request)
     {
+        $validated = $request->validate([
+        'email' => 'required',
+        'password' => 'required'
+        ]);
+
         $data = customer::where('email', $request->email)->first();   // get() all in arr // first -> single data
         if (! $data || ! Hash::check($request->password, $data->password)) {
             echo "<script>

@@ -23,17 +23,27 @@
                 <div class="row">
                     <div class="form-group col-md-12 mb-3">
                         <label for="inputname">Name</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name">
+                        <input type="text" value="{{old('name')}}" class="form-control mt-1" id="name" name="name" placeholder="Name">
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                     </div>
                     <div class="form-group col-md-12 mb-3">
                         <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        <input type="email" value="{{old('email')}}" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
               
                 <div class="mb-3">
                     <label for="inputmessage">Message</label>
-                    <textarea class="form-control mt-1" id="message" name="comment" placeholder="Message" rows="8"></textarea>
+                    <textarea class="form-control mt-1" value="{{old('comment')}}" id="message" name="comment" placeholder="Message" rows="8"></textarea>
+                    @error('comment')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">

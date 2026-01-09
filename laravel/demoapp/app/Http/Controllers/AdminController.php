@@ -18,6 +18,7 @@ namespace App\Http\Controllers;
 
 use App\Models\admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -28,7 +29,39 @@ class AdminController extends Controller
      */
     public function index()
     {
-         return view('admin/index');
+        return view('admin/index');
+    }
+
+    public function admin_auth(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $data = admin::where('email', $request->email)->first();   // get() all in arr // first -> single data
+        if (! $data || ! Hash::check($request->password, $data->password)) {
+            echo "<script>
+             alert('Wrong Creadential so Login Failed');
+             window.location='/login';
+             </script>";
+        } else {
+
+            session()->put('aname', $data->name); // $_SESSION['sname']=$data->name;
+            session()->put('aid', $data->id);
+
+            echo "<script> alert('Login Success');
+                window.location='/dashboard';</script>";
+        }
+    }
+
+    public function adminlogout()
+    {
+        session()->pull('aid');
+        session()->pull('aname');
+        echo "<script> alert('Logout Success');
+        window.location='/login';
+        </script>";
     }
 
     /**

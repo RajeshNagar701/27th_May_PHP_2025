@@ -25,7 +25,8 @@
                   <img src="{{url('admin/assets/images/logos/logo.svg')}}" alt="">
                 </a>
                 <p class="text-center">Your Social Campaigns</p>
-                <form method="post" >
+                <form method="" action="{{url('admin_auth')}}">
+                  @csrf
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
                     <input type="email" value="<?php if(isset($_COOKIE['aname'])){ echo $_COOKIE['aname'];}?>"  name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -44,10 +45,7 @@
                     <a class="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
                   </div>
                   <button type="submit" name="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-4 mb-0 fw-bold">New to MaterialM?</p>
-                    <a class="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</a>
-                  </div>
+                 
                 </form>
               </div>
             </div>
