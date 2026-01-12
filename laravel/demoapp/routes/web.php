@@ -50,8 +50,7 @@ Route::get('/shop-single',[ProductController::class,'single_shop']);
 Route::group(['middleware'=>['Abefore']],function(){
 
     Route::get('/admin-login',[AdminController::class,'index']);
-    Route::post('/admin_auth',[AdminController::class,'admin_auth']);
-
+    Route::post('/admin_auth_login', [AdminController::class, 'admin_auth_login']);
 });
 
 Route::group(['middleware'=>['Aafter']],function(){

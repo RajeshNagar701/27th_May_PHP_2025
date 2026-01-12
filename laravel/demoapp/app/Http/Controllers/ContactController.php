@@ -97,10 +97,9 @@ class ContactController extends Controller
     {
             //contact::all()   select * from contact
         $data=contact::find($id); // select * from contact whee id=5
+        $name=$data->name;
         $data->delete();
-        echo "<script>
-        alert('Contact Delete Success');
-        window.location='/manage_contact';
-        </script>";
+        //session()->flash('Success', 'Register Success');
+        return back()->with('ses_name', $name);  
     }
 }

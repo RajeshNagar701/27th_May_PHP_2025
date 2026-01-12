@@ -29,10 +29,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin/index');
+        return view('admin/login');
     }
 
-    public function admin_auth(Request $request)
+    public function admin_auth_login(Request $request)
     {
         $validated = $request->validate([
             'email' => 'required',
@@ -42,16 +42,18 @@ class AdminController extends Controller
         $data = admin::where('email', $request->email)->first();   // get() all in arr // first -> single data
         if (! $data || ! Hash::check($request->password, $data->password)) {
             echo "<script>
-             alert('Wrong Creadential so Login Failed');
-             window.location='/login';
-             </script>";
+            alert('Login Failed');
+            window.location='/admin-login';
+            </script>";
         } else {
 
             session()->put('aname', $data->name); // $_SESSION['sname']=$data->name;
             session()->put('aid', $data->id);
-
-            echo "<script> alert('Login Success');
-                window.location='/dashboard';</script>";
+            echo "<script>
+            alert('Login Success');
+            window.location='/dashboard';
+            </script>";
+            
         }
     }
 

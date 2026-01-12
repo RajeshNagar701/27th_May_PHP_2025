@@ -66,6 +66,10 @@
         <div class="card-body">
           <h5 class="card-title fw-semibold mb-4">Manage Contact</h5>
           <div class="container mt-3">
+            @if(session('ses_name'))
+            <h3 style="color:green">{{session('ses_name')}} is Deleted success</h3>
+            @endif
+
             <table id="mytable" class="table table-hover">
               <thead>
                 <tr>
