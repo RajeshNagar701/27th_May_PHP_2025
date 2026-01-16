@@ -87,7 +87,7 @@
 					
 					  <tr>
 						<td><?php echo $data->id?></td>
-            <td><?php echo $data->cate_id?></td>
+            <td><?php echo $data->cate_name?></td>
 						<td><?php echo $data->prod_name?></td>
 						<td><?php echo $data->main_price?></td>
             <td><?php echo $data->disc_price?></td>

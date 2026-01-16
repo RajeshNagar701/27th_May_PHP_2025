@@ -74,7 +74,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        $prod_arr = product::all(); 
+        $prod_arr = product::join('categories','products.cate_id','=','categories.id')->get(['products.*','categories.cate_name']); 
         return view('admin/manage_product',['prod_arr'=>$prod_arr]);
     }
 
