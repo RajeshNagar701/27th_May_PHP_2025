@@ -13,7 +13,6 @@ class Kernel extends HttpKernel
      *
      * @var array<int, class-string|string>
      */
-    // Global middleware register
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
@@ -29,7 +28,6 @@ class Kernel extends HttpKernel
      *
      * @var array<string, array<int, class-string|string>>
      */
-    // Groups middleware register
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -45,10 +43,6 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        
-         // Groupe Middleware register 
-        'Aafter' => [\App\Http\Middleware\Aafter::class],
-        'Abefore' => [\App\Http\Middleware\Abefore::class]
     ];
 
     /**
@@ -58,12 +52,7 @@ class Kernel extends HttpKernel
      *
      * @var array<string, class-string|string>
      */
-    // route middleware register
     protected $routeMiddleware = [
-        
-        'Uafter' => \App\Http\Middleware\Uafter::class,
-        'Ubefore' => \App\Http\Middleware\Ubefore::class,
-
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

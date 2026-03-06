@@ -37,7 +37,6 @@ Route::get('/edit_profile/{id}',[CustomerController::class,'edit_profile'])->mid
 Route::post('/update_profile/{id}',[CustomerController::class,'update'])->middleware('Uafter');
 
 
-
 Route::get('/contact',[ContactController::class,'create']);
 Route::post('/contact',[ContactController::class,'store']);
 
@@ -73,6 +72,7 @@ Route::group(['middleware'=>['Aafter']],function(){
     Route::get('/manage_customer/{id}',[CustomerController::class,'destroy']);
     Route::get('/manage_contact',[ContactController::class,'show']);
     Route::get('/manage_contact/{id}',[ContactController::class,'destroy']);
+
 });
 
 
