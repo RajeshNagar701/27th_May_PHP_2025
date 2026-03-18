@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\welcomemail;
 use App\Models\customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
 {
@@ -90,8 +92,8 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $data = new customer();
-        $data->name = $request->name;
-        $data->email = $request->email;
+ $name=$data->name = $request->name;
+ $email=$data->email = $request->email;
         $data->password = Hash::make($request->password);
         $data->gender = $request->gender;
         $data->hobby = implode(",", $request->hobby); // arr to string
@@ -104,6 +106,9 @@ class CustomerController extends Controller
         $data->image = $filename; // store in name in database
 
         $data->save();
+        
+        $info=array("name"=>$name,"email"=>$email);
+        Mail::to($email)->send(new welcomemail($info));
         echo "<script>
         alert('Signup Success');
         window.location='/login';

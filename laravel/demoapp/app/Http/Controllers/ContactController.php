@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\inquirymail;
 use App\Models\contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -43,9 +45,12 @@ class ContactController extends Controller
 
         $data=new contact;
         $data->name=$request->name;  //$_REQUEST['name'];
-        $data->email=$request->email;
+ $email=$data->email=$request->email;
         $data->comment=$request->comment;
         $data->save();
+
+        Mail::to($email)->send(new inquirymail());
+
         echo "<script>
         alert('Contact Inquiry Success');
         window.location='/contact';
